@@ -9,6 +9,8 @@ export class AppComponent {
   inputText = "Texto inicial 2";
   inputType = "text";
   isDisabled = false
+  buttonTitle = "Texto do botão"
+  buttonDisabled = false
 
 
   enableInput(){
@@ -35,5 +37,7 @@ export class AppComponent {
     this.inputText = event.target.value
     console.log(event)
   }
+
+
 
 }

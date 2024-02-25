@@ -4,20 +4,23 @@
     <app-card-roxo></app-card-roxo>
 
     <app-card-button></app-card-button>
-    <!--    property binding [value] [type] -->
+    <h4>Property and Event Binding</h4>
+    <!--    property binding [value] [type], usa colchetes []-->
     <!--    enviando valor para as propriedades-->
     <input id="meu-input" [value]="inputText" [type]="inputType" [disabled]="isDisabled"
            (keyup)="handleInputKeyUp($event)"/>
-    <br/>
 
-    <!--    event binding (click) (change) (blur) -->
+    <!--    event binding (click) (change) (blur), usa parênteses () -->
     <!--    recebendo valor que vem do evento $event -->
 
     <button (click)="enableInput()">Habilitar</button>
     <button (click)="disableInput()">Desabilitar</button>
     <button (click)="setPasswordTypeInput()">Senha</button>
     <button (click)="setTextTypeInput()">Texto</button>
-    <br>
     <button (click)="logInputText()">LOG</button>
+
+    <h4>Attribute Binding</h4>
+    <button [attr.title]="buttonTitle">Teste</button>
+    <button [attr.disabled]="buttonDisabled ? true : null">Disabled</button>
 
 </div>
