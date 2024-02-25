@@ -37,6 +37,14 @@
     <button (click)="updateStyleObjCorrect()">Atualizar obj correto</button>
     <button (click)="updateWidth()">Atualizar width</button>
 
+    <h4>Class Binding</h4>
+
+    <button [class.red-button]="isRedButton" (click)="isGreenButton = false">Muda para Vermelho</button>
+    <button [class.green-button]="true" (click)="isGreenButton = true">Muda para Verde</button>
+    <button [class]="{
+    'red-button': !isGreenButton,
+    'green-button': isGreenButton
+    }">Class with object</button>
 
 
 

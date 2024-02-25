@@ -14,7 +14,8 @@ export class AppComponent {
   buttonWidth1 = "110px"
   buttonWidth2 = 130
   stylesObj = {width: '160px', backgroundColor: 'grey'}
-
+  isRedButton = true
+  isGreenButton = true
 
   enableInput(){
     this.isDisabled = false
