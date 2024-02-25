@@ -1,18 +1,23 @@
 <div class="cards-container" style="display: flex;flex-direction: column;gap:6px;width: fit-content">
-  <app-card></app-card>
+    <app-card></app-card>
 
-  <app-card-roxo></app-card-roxo>
+    <app-card-roxo></app-card-roxo>
 
-  <app-card-button></app-card-button>
-  <!--    property binding-->
-  <input id="meu-input" [value]="inputText" [type]="inputType" [disabled]="isDisabled"/>
-  <br/>
-  <button (click)="enableInput()">Habilitar</button>
-  <button (click)="disableInput()">Desabilitar</button>
+    <app-card-button></app-card-button>
+    <!--    property binding [value] [type] -->
+    <!--    enviando valor para as propriedades-->
+    <input id="meu-input" [value]="inputText" [type]="inputType" [disabled]="isDisabled"
+           (keyup)="handleInputKeyUp($event)"/>
+    <br/>
 
-  <button (click)="setPasswordTypeInput()">Senha</button>
-  <button (click)="setTextTypeInput()">Texto</button>
-  <br>
-  <button (click)="logInputText()">LOG</button>
+    <!--    event binding (click) (change) (blur) -->
+    <!--    recebendo valor que vem do evento $event -->
+
+    <button (click)="enableInput()">Habilitar</button>
+    <button (click)="disableInput()">Desabilitar</button>
+    <button (click)="setPasswordTypeInput()">Senha</button>
+    <button (click)="setTextTypeInput()">Texto</button>
+    <br>
+    <button (click)="logInputText()">LOG</button>
 
 </div>

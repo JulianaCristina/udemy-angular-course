@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   inputText = "Texto inicial 2";
-  inputType = "password";
-  isDisabled = true
+  inputType = "text";
+  isDisabled = false
 
 
   enableInput(){
@@ -29,6 +29,11 @@ export class AppComponent {
 
   logInputText() {
     console.log(this.inputText)
+  }
+
+  handleInputKeyUp(event: any){
+    this.inputText = event.target.value
+    console.log(event)
   }
 
 }
