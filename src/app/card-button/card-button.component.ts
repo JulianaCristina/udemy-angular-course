@@ -2,8 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-card-button',
-  templateUrl: './card-button.component.html',
-  styleUrls: ['./card-button.component.scss']
+  styleUrls: ['./card-button.component.scss'],
+  template: `
+    <div class="card-button">TESTE</div>
+  `
 })
 export class CardButtonComponent {
 
