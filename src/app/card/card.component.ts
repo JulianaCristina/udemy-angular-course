@@ -1,24 +1,29 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, numberAttribute} from '@angular/core';
 
+function handlePlanType(value: string){
+  return value.toUpperCase()
+}
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  @Input({required: true}) planPrice: number = 0
+  @Input({required: true, transform: numberAttribute}) planPrice: number = 0
+  //using transform
+  @Input({alias: "planTypeAlias", transform: (value: string) => handlePlanType(value)}) planType: string = ""
 
-  private _planType: string = ""
 
-  //used to intercept the values when needed
-  @Input("planTypeAlias")
-  set planType(value: string){
-    this._planType = value.toUpperCase()
-  }
-
-  get planType(): string {
-    return this._planType
-  }
+  //used to intercept the values when needed (Get and Set)
+  // private _planType: string = ""
+  // @Input("planTypeAlias")
+  // set planType(value: string){
+  //   this._planType = value.toUpperCase()
+  // }
+  //
+  // get planType(): string {
+  //   return this._planType
+  // }
 
 
   buttonClicked(valueEmitted: boolean){
