@@ -6,6 +6,8 @@
 
         <!--        <app-card-button></app-card-button>-->
     </div>
+    <input #meuInput type="text" (keyup)="handlePlanType(meuInput.value)" placeholder="Digite o plano"/>
+
 
     <div style="display: flex;flex-direction: column;gap:6px;width: fit-content">
         <h4>Property and Event Binding</h4>

@@ -65,7 +65,9 @@ export class AppComponent {
   }
 
   //Card examples
-
+  handlePlanType(text: string){
+    this.cardPlanType = text
+  }
 
 
 }
