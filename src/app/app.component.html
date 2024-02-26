@@ -1,51 +1,58 @@
-<div class="cards-container" style="display: flex;flex-direction: column;gap:6px;width: fit-content">
-    <app-card></app-card>
+<div>
+    <div class="cards-container">
+        <app-card [planTypeAlias]="cardPlanType" [planPrice]="cardPlanPrice"></app-card>
 
-    <app-card-roxo></app-card-roxo>
+        <app-card-roxo></app-card-roxo>
 
-    <app-card-button></app-card-button>
-    <h4>Property and Event Binding</h4>
-    <!--    property binding [value] [type], usa colchetes []-->
-    <!--    enviando valor para as propriedades-->
-    <input id="meu-input" [value]="inputText" [type]="inputType" [disabled]="isDisabled"
-           (keyup)="handleInputKeyUp($event)"/>
+        <!--        <app-card-button></app-card-button>-->
+    </div>
 
-    <!--    event binding (click) (change) (blur), usa parênteses () -->
-    <!--    recebendo valor que vem do evento $event -->
+    <div style="display: flex;flex-direction: column;gap:6px;width: fit-content">
+        <h4>Property and Event Binding</h4>
+        <!--    property binding [value] [type], usa colchetes []-->
+        <!--    enviando valor para as propriedades-->
+        <input id="meu-input" [value]="inputText" [type]="inputType" [disabled]="isDisabled"
+               (keyup)="handleInputKeyUp($event)"/>
 
-    <button (click)="enableInput()">Habilitar</button>
-    <button (click)="disableInput()">Desabilitar</button>
-    <button (click)="setPasswordTypeInput()">Senha</button>
-    <button (click)="setTextTypeInput()">Texto</button>
-    <button (click)="logInputText()">LOG</button>
+        <!--    event binding (click) (change) (blur), usa parênteses () -->
+        <!--    recebendo valor que vem do evento $event -->
 
-    <h4>Attribute Binding</h4>
-    <button [attr.title]="buttonTitle">Teste</button>
-    <button [attr.disabled]="buttonDisabled ? true : null">Disabled</button>
+        <button (click)="enableInput()">Habilitar</button>
+        <button (click)="disableInput()">Desabilitar</button>
+        <button (click)="setPasswordTypeInput()">Senha</button>
+        <button (click)="setTextTypeInput()">Texto</button>
+        <button (click)="logInputText()">LOG</button>
 
-    <h4>Style Binding</h4>
-    <button style="width: 100px; background-color: aqua">Normal</button>
-    <button [style.width]="buttonWidth1" [style.background-color]="'red'" >Normal</button>
-    <button [style.width.px]="buttonWidth2" [style.background-color]="'pink'" >Especificar width</button>
-    <button [style]="'width: 140px; backgroundColor: brown'">Normal</button>
-    <button [style]="{width: '150px', backgroundColor: 'orange'}">Passando um objeto inline</button>
-    <br>
-    <button [style]="stylesObj">Passando um objeto ts</button>
+        <h4>Attribute Binding</h4>
+        <button [attr.title]="buttonTitle">Teste</button>
+        <button [attr.disabled]="buttonDisabled ? true : null">Disabled</button>
 
-    <h3>Atualizando objeto style</h3>
-    <button (click)="updateStyleObj()">Atualizar obj</button>
-    <button (click)="updateStyleObjCorrect()">Atualizar obj correto</button>
-    <button (click)="updateWidth()">Atualizar width</button>
+        <h4>Style Binding</h4>
+        <button style="width: 100px; background-color: aqua">Normal</button>
+        <button [style.width]="buttonWidth1" [style.background-color]="'red'">Normal</button>
+        <button [style.width.px]="buttonWidth2" [style.background-color]="'pink'">Especificar width</button>
+        <button [style]="'width: 140px; backgroundColor: brown'">Normal</button>
+        <button [style]="{width: '150px', backgroundColor: 'orange'}">Passando um objeto inline</button>
+        <br>
+        <button [style]="stylesObj">Passando um objeto ts</button>
 
-    <h4>Class Binding</h4>
+        <h3>Atualizando objeto style</h3>
+        <button (click)="updateStyleObj()">Atualizar obj</button>
+        <button (click)="updateStyleObjCorrect()">Atualizar obj correto</button>
+        <button (click)="updateWidth()">Atualizar width</button>
 
-    <button [class.red-button]="isRedButton" (click)="isGreenButton = false">Muda para Vermelho</button>
-    <button [class.green-button]="true" (click)="isGreenButton = true">Muda para Verde</button>
-    <button [class]="{
-    'red-button': !isGreenButton,
-    'green-button': isGreenButton
-    }">Class with object</button>
+        <h4>Class Binding</h4>
 
+        <button [class.red-button]="isRedButton" (click)="isGreenButton = false">Muda para Vermelho</button>
+        <button [class.green-button]="true" (click)="isGreenButton = true">Muda para Verde</button>
+        <button [class]="{
+            'red-button': !isGreenButton,
+            'green-button': isGreenButton
+            }">Class with object
+        </button>
+
+
+    </div>
 
 
 </div>

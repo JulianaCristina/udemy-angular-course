@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -6,18 +6,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent {
-  plano = {
+  @Input("planTypeAlias") planType: string = ""
+  @Input({required: true}) planPrice: number = 0
 
-    infos: {
-      tipo: "Teste",
-      preco: 100,
-    }
+  buttonClicked(valueEmitted: boolean){
+    console.log("buttonClicked",valueEmitted)
   }
 
-  getFullPrice(){
-    setTimeout(() => {
-      this.plano.infos.tipo = "Simples"
-    }, 4000)
-    return "R$"+ this.plano.infos.preco + ",00/Mês"
-  }
+  // plano = {
+  //   infos: {
+  //     tipo: "Teste",
+  //     preco: 100,
+  //   }
+  // }
+  //
+  // getFullPrice(){
+  //   setTimeout(() => {
+  //     this.plano.infos.tipo = "Simples"
+  //   }, 4000)
+  //   return "R$"+ this.plano.infos.preco + ",00/Mês"
+  // }
 }

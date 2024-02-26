@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  //cards examples
+  cardPlanType = "Simples"
+  cardPlanPrice = 100
+
+  //binding examples
   inputText = "Texto inicial 2";
   inputType = "text";
   isDisabled = false
@@ -17,6 +22,7 @@ export class AppComponent {
   isRedButton = true
   isGreenButton = true
 
+  //binding examples
   enableInput(){
     this.isDisabled = false
   }
@@ -57,6 +63,8 @@ export class AppComponent {
   updateWidth(){
     this.buttonWidth2 = 200
   }
+
+  //Card examples
 
 
 
